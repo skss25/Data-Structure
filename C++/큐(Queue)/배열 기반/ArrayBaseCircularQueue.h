@@ -3,19 +3,19 @@
 #define ARRAY_CIRCULAR_QUEUE_H
 
 #define QUE_LEN 100
-typedef int Data;
 
+template<typename T>
 class Queue {
 private:
 	int front;
 	int rear;
-	Data arr[QUE_LEN];
+	T arr[QUE_LEN];
 public:
 	Queue(void);
 	bool IsEmpty(void);
-	void Enqueue(Data data);
-	Data Dequeue(void);
-	Data Peek(void);
+	void Enqueue(T data);
+	T Dequeue(void);
+	T Peek(void);
 };
 
 #endif

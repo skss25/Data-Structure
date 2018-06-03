@@ -3,7 +3,7 @@
 using namespace std;
 
 int main(void) {
-	Queue que;
+	Queue<int> que;
 
 	//Insert data
 	cout << "Enqueue called!" << endl;

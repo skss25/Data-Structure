@@ -10,13 +10,15 @@ int getNextIdx(int idx) //배열의 끝에 오면, 다시 0으로
 		return (idx + 1);
 }
 
-Queue::Queue(void) 
+template<typename T>
+Queue<typename T>::Queue(void)
 {
 	this->front = 0;
 	this->rear = 0;
 }
 
-bool Queue::IsEmpty(void) 
+template<typename T>
+bool Queue<typename T>::IsEmpty(void)
 {
 	if (this->front == this->rear) //텅 빈 상황이라면...
 		return true;
@@ -24,7 +26,8 @@ bool Queue::IsEmpty(void)
 		return false;
 }
 
-void Queue::Enqueue(Data data) 
+template<typename T>
+void Queue<typename T>::Enqueue(T data)
 {
 	if (getNextIdx(this->rear) == this->front) //데이터가 꽉 찬다면..
 	{
@@ -37,7 +40,8 @@ void Queue::Enqueue(Data data)
 	this->arr[this->rear] = data;
 }
 
-Data Queue::Dequeue(void) 
+template<typename T>
+T Queue<typename T>::Dequeue(void)
 {
 	if (IsEmpty())
 	{
@@ -48,7 +52,9 @@ Data Queue::Dequeue(void)
 	this->front++;
 	return this->arr[this->front];
 }
-Data Queue::Peek(void) 
+
+template<typename T>
+T Queue<typename T>::Peek(void)
 {
 	if (IsEmpty())
 	{
